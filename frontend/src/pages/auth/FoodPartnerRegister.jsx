@@ -38,7 +38,7 @@ const FoodPartnerRegister = () => {
         phone,
         email,
         password,
-          await axios.post("https://food-reels-1.onrender.com/api/auth/food-partner/register", {
+        address,
       },
     {
         withCredentials: true
