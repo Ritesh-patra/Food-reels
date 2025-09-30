@@ -32,8 +32,8 @@ const FoodPartnerRegister = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/user/registerfoodpartner", {
-        fullname :businessName,
+      const res = await axios.post("http://localhost:3000/api/auth/food-partner/register", {
+        name :businessName,
         contactName,
         phone,
         email,

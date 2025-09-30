@@ -21,7 +21,7 @@ const FoodPartnerLogin = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/user/loginfoodpartner",
+      const res = await axios.post("http://localhost:3000/api/auth/food-partner/login",
          { email, password },{
             withCredentials: true
          });
@@ -49,9 +49,13 @@ const FoodPartnerLogin = () => {
               User
             </Link>
             <span className="mx-1">·</span>
-            <Link to="/food-partner/login" className="underline underline-offset-4 text-foreground">
-              Food partner
-            </Link>
+         <Link 
+  to="/food-partner/login" 
+  className="underline underline-offset-4 decoration-2 text-white decoration-white"
+>
+  Food partner
+</Link>
+
           </div>
         </header>
 

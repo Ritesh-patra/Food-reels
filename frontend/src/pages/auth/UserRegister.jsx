@@ -32,7 +32,7 @@ const UserRegister = () => {
     
     try {
       const res = await axios.post('http://localhost:3000/api/auth/user/register', {
-        fullname,
+        fullName :fullname,
         email,
         password, 
         
@@ -68,7 +68,7 @@ const UserRegister = () => {
               User
             </Link>
             <span className="mx-1">·</span>
-            <Link to="/food-partner/register" className="underline-offset-4 hover:text-foreground">
+            <Link to="/food-partner/register" className="underline-offset-4 text-white hover:text-foreground">
               Food partner
             </Link>
           </div>

@@ -22,7 +22,7 @@ const Profile = () => {
             <section className="profile-header">
                 <div className="profile-meta">
 
-                    <img className="profile-avatar" src="https://images.unsplash.com/photo-1754653099086-3bddb9346d37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0Nnx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                    <img className="profile-avatar" src="https://imgs.search.brave.com/0keIkwTU2jXJ2f8zM6AQPSlymq7sNXP9FkMz-46k2sg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9taXIt/czMtY2RuLWNmLmJl/aGFuY2UubmV0L3By/b2plY3RzLzQwNC80/NmQ0MDEyMTA2MzIz/MzkuWTNKdmNDd3hN/RFUzTERneU55dzJN/amdzTVRNei5wbmc" alt="" />
 
                     <div className="profile-info">
                         <h1 className="profile-pill profile-business" title="Business name">
@@ -37,11 +37,11 @@ const Profile = () => {
                 <div className="profile-stats" role="list" aria-label="Stats">
                     <div className="profile-stat" role="listitem">
                         <span className="profile-stat-label">total meals</span>
-                        <span className="profile-stat-value">{profile?.totalMeals}</span>
+                        <span className="profile-stat-value">12K</span>
                     </div>
                     <div className="profile-stat" role="listitem">
                         <span className="profile-stat-label">customer served</span>
-                        <span className="profile-stat-value">{profile?.customersServed}</span>
+                        <span className="profile-stat-value">30K</span>
                     </div>
                 </div>
             </section>
