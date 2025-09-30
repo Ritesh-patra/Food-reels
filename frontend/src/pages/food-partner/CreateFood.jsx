@@ -56,7 +56,7 @@ const CreateFood = () => {
         formData.append('description', description);
         formData.append("mama", videoFile);
 
-    const response = await axios.post("https://food-reels-omega.vercel.app//api/food", formData, {
+    const response = await axios.post("https://food-reels-omega.vercel.app/api/food", formData, {
             withCredentials: true,
         })
 

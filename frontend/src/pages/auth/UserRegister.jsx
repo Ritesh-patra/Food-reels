@@ -31,7 +31,7 @@ const UserRegister = () => {
     setLoading(true);
     
     try {
-  const res = await axios.post('https://food-reels-omega.vercel.app//api/auth/user/register', {
+  const res = await axios.post('https://food-reels-omega.vercel.app/api/auth/user/register', {
         fullName :fullname,
         email,
         password, 

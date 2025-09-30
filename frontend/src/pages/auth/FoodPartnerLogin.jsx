@@ -21,7 +21,7 @@ const FoodPartnerLogin = () => {
 
     setLoading(true);
     try {
-    await axios.post("https://food-reels-omega.vercel.app//api/auth/food-partner/login",
+    await axios.post("https://food-reels-omega.vercel.app/api/auth/food-partner/login",
       { email, password },{
         withCredentials: true
       });
