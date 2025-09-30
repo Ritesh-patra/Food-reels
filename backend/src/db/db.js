@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 
 function connectDB() {
-    mongoose.connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        tls: true, // TLS/SSL enable
-        tlsAllowInvalidCertificates: false, // true if self-signed certificate
-    })
+    mongoose.connect(process.env.MONGODB_URI,)
     .then(() => {
         console.log("MongoDB connected");
     })

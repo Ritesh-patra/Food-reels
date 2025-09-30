@@ -8,7 +8,10 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: [
+        "http://localhost:5173",
+        "https://food-reels-qfqu3j6th-ritesh-patras-projects.vercel.app/"
+    ],
     credentials: true
 }));
 app.use(cookieParser());
