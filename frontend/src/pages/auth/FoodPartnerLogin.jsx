@@ -21,7 +21,7 @@ const FoodPartnerLogin = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/food-partner/login",
+      const res = await axios.post("https://food-reels.onrender.com/api/auth/food-partner/login",
          { email, password },{
             withCredentials: true
          });

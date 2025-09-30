@@ -23,7 +23,7 @@ const navigate = useNavigate();
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/auth/user/login",
+      const res = await axios.post("https://food-reels.onrender.com/api/auth/user/login",
          { email, password },{
             withCredentials: true
          });
