@@ -32,7 +32,7 @@ const FoodPartnerRegister = () => {
 
     setLoading(true);
     try {
-  const res = await axios.post("https://vercel.com/ritesh-patras-projects/food-reels-9jup/api/auth/food-partner/register", {
+  const res = await axios.post("https://food-reels-9jup.vercel.app//api/auth/food-partner/register", {
         name :businessName,
         contactName,
         phone,

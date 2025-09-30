@@ -13,7 +13,7 @@ app.set('trust proxy', 1);
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://food-reels-navy.vercel.app/"
+        "https://food-reels-omega.vercel.app"
     ],
     credentials: true
 }));
