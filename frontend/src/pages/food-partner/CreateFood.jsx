@@ -56,7 +56,7 @@ const CreateFood = () => {
         formData.append('description', description);
         formData.append("mama", videoFile);
 
-    const response = await axios.post("https://food-reels-1.onrender.com/api/food", formData, {
+    const response = await axios.post("https://vercel.com/ritesh-patras-projects/food-reels-9jup/api/food", formData, {
             withCredentials: true,
         })
 

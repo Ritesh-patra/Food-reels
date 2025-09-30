@@ -31,7 +31,7 @@ const UserRegister = () => {
     setLoading(true);
     
     try {
-  const res = await axios.post('https://food-reels-1.onrender.com/api/auth/user/register', {
+  const res = await axios.post('https://vercel.com/ritesh-patras-projects/food-reels-9jup/api/auth/user/register', {
         fullName :fullname,
         email,
         password, 
