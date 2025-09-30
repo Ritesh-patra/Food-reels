@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://food-reels-qfqu3j6th-ritesh-patras-projects.vercel.app/"
+        "https://food-reels-1.onrender.com"
     ],
     credentials: true
 }));
