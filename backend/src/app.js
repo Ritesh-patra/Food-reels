@@ -7,6 +7,7 @@ const foodPartnerRoutes = require('./routes/food-partner.routes');
 const cors = require('cors');
 
 const app = express();
+app.use(cors());
 app.use(cors({
     origin: [
         "http://localhost:5173",
