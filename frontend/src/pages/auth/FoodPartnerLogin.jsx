@@ -21,10 +21,10 @@ const FoodPartnerLogin = () => {
 
     setLoading(true);
     try {
-    const res = await axios.post("https://food-reels-1.onrender.com/api/auth/food-partner/login",
-         { email, password },{
-            withCredentials: true
-         });
+    await axios.post("https://food-reels-1.onrender.com/api/auth/food-partner/login",
+      { email, password },{
+        withCredentials: true
+      });
     
      
       navigate("/create-food");

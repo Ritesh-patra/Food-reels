@@ -7,7 +7,9 @@ const foodPartnerRoutes = require('./routes/food-partner.routes');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+// when deployed behind a proxy (Vercel/Render) enable trust proxy
+app.set('trust proxy', 1);
+
 app.use(cors({
     origin: [
         "http://localhost:5173",
