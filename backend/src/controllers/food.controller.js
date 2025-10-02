@@ -33,18 +33,20 @@ async function getFoodItems(req, res) {
 
 async function likeFood(req, res) {
     const { foodId } = req.body;
-    const user = req.user;
+    const actor = req.user ? { type: 'user', id: req.user._id } : req.foodPartner ? { type: 'foodPartner', id: req.foodPartner._id } : null;
 
-    const isAlreadyLiked = await likeModel.findOne({
-        user: user._id,
-        food: foodId
-    })
+    if (!actor) {
+        return res.status(401).json({ message: 'Please login first' })
+    }
+
+    const query = { food: foodId };
+    if (actor.type === 'user') query.user = actor.id;
+    else query.foodPartner = actor.id;
+
+    const isAlreadyLiked = await likeModel.findOne(query);
 
     if (isAlreadyLiked) {
-        await likeModel.deleteOne({
-            user: user._id,
-            food: foodId
-        })
+        await likeModel.deleteOne(query);
 
         await foodModel.findByIdAndUpdate(foodId, {
             $inc: { likeCount: -1 }
@@ -55,10 +57,11 @@ async function likeFood(req, res) {
         })
     }
 
-    const like = await likeModel.create({
-        user: user._id,
-        food: foodId
-    })
+    const createData = { food: foodId };
+    if (actor.type === 'user') createData.user = actor.id;
+    else createData.foodPartner = actor.id;
+
+    const like = await likeModel.create(createData);
 
     await foodModel.findByIdAndUpdate(foodId, {
         $inc: { likeCount: 1 }

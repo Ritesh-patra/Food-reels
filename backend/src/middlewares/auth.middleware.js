@@ -61,7 +61,43 @@ async function authUserMiddleware(req, res, next) {
 
 }
 
+async function authAnyMiddleware(req, res, next) {
+
+    const token = req.cookies.token;
+
+    if (!token) {
+        return res.status(401).json({
+            message: "Please login first"
+        })
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
+
+        // try user first
+        const user = await userModel.findById(decoded.id);
+        if (user) {
+            req.user = user
+            return next()
+        }
+
+        // try food partner
+        const foodPartner = await foodPartnerModel.findById(decoded.id);
+        if (foodPartner) {
+            req.foodPartner = foodPartner
+            return next()
+        }
+
+        return res.status(401).json({ message: 'Invalid token' })
+
+    } catch (err) {
+        return res.status(401).json({ message: "Invalid token" })
+    }
+
+}
+
 module.exports = {
     authFoodPartnerMiddleware,
-    authUserMiddleware
+    authUserMiddleware,
+    authAnyMiddleware
 }
