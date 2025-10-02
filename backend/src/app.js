@@ -11,7 +11,7 @@ app.set("trust proxy", 1);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",   // frontend ka URL
+    origin: "https://food-reels-1.onrender.com",   // frontend ka URL
     credentials: true,                 // cookie allow karega
   })
 );
